@@ -1,0 +1,42 @@
+{
+    "details": "Retrieved NimbleRx Pharmacy",
+    "generatedTs": "2022-04-17T07:33:05.332012Z",
+    "href": "https://api-qa-demo.nimbleandsimple.com/pharmacies/info/NRxPh-HLRS",
+    "responseCode": "20063012",
+    "value": {
+        "acceptInvalidAddress": false,
+        "active": false,
+        "address": {
+            "addressType": "C",
+            "city": "SEATTLE",
+            "externalId": "Addr-yYVetVOpBZ",
+            "googlePlaceId": "ChIJi51MqbpqkFQRyfZ91NrbYPg",
+            "isValid": true,
+            "latitude": 47.60174179077148,
+            "longitude": -122.3342590332031,
+            "postalCode": "98104",
+            "streetAddress1": "605 1ST AVE",
+            "usTerritory": "WA"
+        },
+        "checkoutPharmacy": false,
+        "defaultTimeZone": null,
+        "deliverableStates": [
+            "WA"
+        ],
+        "deliverySubsidyAmount": null,
+        "id": "NRxPh-HLRS",
+        "importActive": false,
+        "localId": "d_recept",
+        "marketplacePharmacy": true,
+        "name": "ReCept",
+        "pharmacistInCharge": null,
+        "pharmacyChainId": "PhChn-hWwRhN7pLR",
+        "pharmacyHours": "9:00am-7:00pm Mon-Fri \n 9:00a - 5:00p Sat \n 10:00a- 5:00p Sun",
+        "pharmacyLoginCode": null,
+        "pharmacySystem": "PnrRx",
+        "pharmacyType": "P",
+        "postalCodes": null,
+        "primaryPhoneNumber": "+12062841353",
+        "testPharmacy": false
+    }
+}

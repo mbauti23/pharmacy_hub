@@ -13,4 +13,5 @@ Libraries used:
 - Hive - local storage 
 - Retrofit + JsonSerializable - network and DTO configuration
 
+Installation and user instructions can be found in app_instruction.md
 

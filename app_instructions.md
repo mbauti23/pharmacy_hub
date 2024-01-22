@@ -6,9 +6,11 @@ Supported Platforms:
 
 Instructions for running the application:
 
+Clone the repository
+
 Ensure Flutter SDK is installed
 
-Open the IDE of your choice
+Open the project in the IDE of your choice
 
 Run the application 
 
@@ -16,7 +18,7 @@ App Experience:
 
 - Home Screen -
 
-Tap on a pharmacy tile to navigate to Pharmacy Details 
+Tap on a pharmacy tile to navigate to the Pharmacy Details Screen
 
 Tap on 'Order now' to select medications to order at the closest eligible Pharmacy 
 

@@ -8,12 +8,16 @@ import 'package:nimble_code_exercise/app/utils/context_extension.dart';
 class PharmacyDetailsRoute extends GoRoute {
   PharmacyDetailsRoute()
       : super(
-            path: PharmacyHubPaths.pharmacyDetails.path,
-            builder: (context, state) => BlocProvider(
-                  create: (context) =>
-                      PharmacyDetailsBloc(context.getPharmacyClient())
-                        ..add(FetchPharmacyDetailsEvent(
-                            state.pathParameters['pharmacyId'] ?? '')),
-                  child: const PharmacyDetailsScreen(),
-                ));
+          path: PharmacyHubPaths.pharmacyDetails.path,
+          builder: (context, state) => BlocProvider(
+            create: (context) =>
+                PharmacyDetailsBloc(context.getPharmacyClient())
+                  ..add(
+                    FetchPharmacyDetailsEvent(
+                      state.pathParameters['pharmacyId'] ?? '',
+                    ),
+                  ),
+            child: const PharmacyDetailsScreen(),
+          ),
+        );
 }

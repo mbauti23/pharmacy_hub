@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:nimble_code_exercise/service/dtos/pharmacy_address.dart';
-import 'package:nimble_code_exercise/service/dtos/pharmacy_details.dart';
+import 'package:nimble_code_exercise/app/pages/pharmacy_details/widgets/previous_orders.dart';
+import 'package:nimble_code_exercise/service/dtos/pharmacy_details/pharmacy_address.dart';
+import 'package:nimble_code_exercise/service/dtos/pharmacy_details/pharmacy_details.dart';
 
 class PharmacyDetailsBody extends StatelessWidget {
   const PharmacyDetailsBody({required this.pharmacyDetails, super.key});
@@ -26,6 +27,10 @@ class PharmacyDetailsBody extends StatelessWidget {
                 padding: const EdgeInsets.only(top: 8.0),
                 child: _hours(),
               ),
+              Padding(
+                padding: const EdgeInsets.only(top: 8.0),
+                child: PreviousOrders(pharmacyId: pharmacyDetails.id ?? ''),
+              ),
             ],
           ),
         ),
@@ -37,8 +42,10 @@ class PharmacyDetailsBody extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Text('Phone',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+        const Text(
+          'Phone',
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+        ),
         if (pharmacyDetails.primaryPhoneNumber != null)
           detailText(pharmacyDetails.primaryPhoneNumber!),
         if (pharmacyDetails.primaryPhoneNumber == null)
@@ -51,8 +58,10 @@ class PharmacyDetailsBody extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Text('Address',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+        const Text(
+          'Address',
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+        ),
         if (address?.streetAddress1 != null)
           detailText(address!.streetAddress1!),
         if (address?.city != null && address?.usTerritory != null)
@@ -69,12 +78,14 @@ class PharmacyDetailsBody extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Text('Hours',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+        const Text(
+          'Hours',
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+        ),
         if (pharmacyDetails.pharmacyHours != null)
           ...pharmacyDetails.pharmacyHours!
               .split('\\n')
-              .map((e) => Text(e.trim()))
+              .map((e) => detailText(e.trim()))
               .toList(),
         if (pharmacyDetails.pharmacyHours == null)
           detailText('No hours to display'),

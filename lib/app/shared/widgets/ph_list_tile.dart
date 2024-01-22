@@ -3,12 +3,18 @@ import 'package:flutter/material.dart';
 class PHListTile extends StatelessWidget {
   const PHListTile({
     required this.title,
-    required this.onTap,
+    this.onTap,
+    this.trailing,
+    this.hasSeparator = true,
+    this.padding,
     super.key,
   });
 
   final String? title;
-  final Function() onTap;
+  final Function()? onTap;
+  final Widget? trailing;
+  final bool hasSeparator;
+  final EdgeInsets? padding;
 
   @override
   Widget build(BuildContext context) {
@@ -19,18 +25,27 @@ class PHListTile extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: const EdgeInsets.all(15.0),
-            child: Text(
-              title ?? 'Null',
-              style: const TextStyle(fontSize: 16),
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
+            padding: padding ?? const EdgeInsets.all(15.0),
+            child: Row(
+              children: [
+                Expanded(
+                  child: Text(
+                    title ?? 'Null',
+                    style: const TextStyle(fontSize: 16),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ),
+                trailing ?? const SizedBox(),
+              ],
             ),
           ),
-          Container(
+          if (hasSeparator)
+            Container(
               margin: const EdgeInsets.symmetric(horizontal: 15),
               color: Colors.grey.shade300,
-              height: 1),
+              height: 1,
+            ),
         ],
       ),
     );

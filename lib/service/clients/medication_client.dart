@@ -8,15 +8,7 @@ abstract class MedicationClient {
   factory MedicationClient(Dio dio, {String? baseUrl}) = _MedicationClient;
 
   factory MedicationClient.construct() {
-    final dio = Dio();
-    dio.options.headers['Access-Control-Allow-Origin'] = '*';
-    dio.options.headers['Access-Control-Allow-Methods'] =
-        'GET, POST, OPTIONS, PUT, PATCH, DELETE';
-    dio.options.headers['Access-Control-Allow-Headers'] =
-        'Origin, X-Requested-With, Content-Type, Accept';
-    dio.options.headers['Access-Control-Allow-Credentials'] = true;
-    dio.options.contentType = 'application/json';
-    return MedicationClient(dio);
+    return MedicationClient(Dio());
   }
 
   @GET('/medicationListFromNIH/medicationListFromNIH.txt')

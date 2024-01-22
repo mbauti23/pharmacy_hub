@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
-import 'package:nimble_code_exercise/service/dtos/pharmacy_address.dart';
+import 'package:nimble_code_exercise/service/dtos/pharmacy_details/pharmacy_address.dart';
 
 part 'pharmacy_details.g.dart';
 

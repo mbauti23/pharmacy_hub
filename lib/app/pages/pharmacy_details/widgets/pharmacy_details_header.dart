@@ -7,12 +7,14 @@ class PharmacyDetailsHeader extends SliverAppBar {
           automaticallyImplyLeading: false,
           expandedHeight: 200,
           centerTitle: false,
+          stretch: true,
           flexibleSpace: Stack(
             fit: StackFit.expand,
             children: [
               Image.network(
                 'https://assets-global.website-files.com/6442ac7739465334ecc14b3c/6453abdcb649814262c5fe43_About_1_cropped.webp',
                 fit: BoxFit.cover,
+                alignment: Alignment.topCenter,
               ),
               Container(
                 decoration: const BoxDecoration(
@@ -28,8 +30,9 @@ class PharmacyDetailsHeader extends SliverAppBar {
                 ),
               ),
               Align(
-                  alignment: Alignment.bottomLeft,
-                  child: PhHeaderText.white(headerText ?? 'Null')),
+                alignment: Alignment.bottomLeft,
+                child: PhHeaderText.white(headerText ?? 'Null'),
+              ),
             ],
           ),
         );

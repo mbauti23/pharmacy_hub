@@ -12,26 +12,28 @@ class PharmacyDetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Details'), bottom: PHBottomBorder()),
-      body: BlocBuilder<PharmacyDetailsBloc, PharmacyDetailsState>(
-        builder: (context, state) {
-          // Error State
-          if (state is ErrorPharmacyDetailsState) {
-            return const Center(
-              child: Text('An error has occured.'),
-            );
-          }
-          // Loaded State
-          if (state is LoadedPharmacyDetailsState) {
-            return CustomScrollView(
-              slivers: [
-                PharmacyDetailsHeader(state.pharmacyDetails.name),
-                PharmacyDetailsBody(pharmacyDetails: state.pharmacyDetails),
-              ],
-            );
-          }
-          // Loading State
-          return const Center(child: CircularProgressIndicator());
-        },
+      body: SafeArea(
+        child: BlocBuilder<PharmacyDetailsBloc, PharmacyDetailsState>(
+          builder: (context, state) {
+            // Error State
+            if (state is ErrorPharmacyDetailsState) {
+              return const Center(
+                child: Text('An error has occured.'),
+              );
+            }
+            // Loaded State
+            if (state is LoadedPharmacyDetailsState) {
+              return CustomScrollView(
+                slivers: [
+                  PharmacyDetailsHeader(state.pharmacyDetails.name),
+                  PharmacyDetailsBody(pharmacyDetails: state.pharmacyDetails),
+                ],
+              );
+            }
+            // Loading State
+            return const Center(child: CircularProgressIndicator());
+          },
+        ),
       ),
     );
   }

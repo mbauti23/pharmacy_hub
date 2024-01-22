@@ -13,7 +13,7 @@ final class LoadingPharmaciesState extends PharmaciesState {}
 
 final class LoadedPharmaciesState extends PharmaciesState {
   const LoadedPharmaciesState(this.pharmacies);
-  final List<Pharmacy> pharmacies;
+  final List<PharmacyWithLocation> pharmacies;
 
   @override
   List<Object?> get props => [pharmacies];

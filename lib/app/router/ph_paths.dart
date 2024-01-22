@@ -1,6 +1,7 @@
 enum PharmacyHubPaths {
   home('/home'),
-  pharmacyDetails('/home/pharmacy-details/:pharmacyId');
+  pharmacyDetails('/home/pharmacy-details/:pharmacyId'),
+  order('/home/order/pharmacy/:pharmacyId/medications');
 
   const PharmacyHubPaths(this.path);
   final String path;

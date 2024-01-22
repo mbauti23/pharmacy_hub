@@ -2,8 +2,10 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:nimble_code_exercise/app/environment/environment.dart';
+import 'package:nimble_code_exercise/app/user/ph_user.dart';
 import 'package:nimble_code_exercise/service/clients/medication_client.dart';
 import 'package:nimble_code_exercise/service/clients/pharmacy_client.dart';
+import 'package:nimble_code_exercise/service/models/position.dart';
 import 'package:provider/provider.dart';
 
 extension ContextExtension on BuildContext {
@@ -28,6 +30,14 @@ extension ContextExtension on BuildContext {
       return getEnvironment()!.medicationClient;
     } catch (e) {
       return MedicationClient.construct();
+    }
+  }
+
+  Position? getUserPosition() {
+    try {
+      return read<PHUser>().position;
+    } catch (e) {
+      return null;
     }
   }
 
